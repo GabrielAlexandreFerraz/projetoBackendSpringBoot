@@ -55,7 +55,7 @@ public class ProdutoController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id, @RequestBody ProdutoFormRequest produto){
+    public ResponseEntity<Void> deletar(@PathVariable Long id){
         Optional<Produto> produtoExistente = repository.findById(id);
         if(produtoExistente.isEmpty()){
             return ResponseEntity.notFound().build();
